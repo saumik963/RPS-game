@@ -6,6 +6,8 @@ const result = document.getElementById("res");
 const hS = document.getElementById("highScore");
 const settingBtn = document.getElementById("dasboard-btn");
 const setting = document.querySelector(".popup-dasboard");
+const slider = document.getElementById("slider");
+const musicBtn = document.getElementById("music");
 
 // players score
 let userScore = 0,
@@ -132,8 +134,27 @@ const highScore = () => {
   showHighScore();
 };
 
+// play game music on background
+
+let music = new Audio("music_track1.mp3");
+
 window.onload = () => {
   showHighScore();
+};
+
+slider.oninput = () => {
+  music.volume = slider.value / 10;
+};
+
+const playMusic = () => {
+  if (musicBtn.src.match("volume_off.png")) {
+    music.play();
+    music.volume = slider.value / 10;
+    musicBtn.src = "volume_on.png";
+  } else {
+    music.pause();
+    musicBtn.src = "volume_off.png";
+  }
 };
 
 const showHighScore = () => {
