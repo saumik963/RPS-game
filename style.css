@@ -93,14 +93,6 @@ img {
 }
 
 .btn {
-  /* padding: 8px;
-  margin: auto;
-  border-radius: 50px;
-  background-color: rgb(0 144 168 / 45%);
-  color: black;
-  font-weight: 900;
-  font-size: large; */
-
   align-items: center;
   appearance: none;
   background-color: #fcfcfd;
@@ -164,20 +156,18 @@ img {
   transition: ease-in-out 0.3s;
 }
 .dasboard #dasboard-btn img {
-  width: 1rem;
+  width: 1.5rem;
   padding: auto;
   background: none;
   position: relative;
-  transition: transform 0.3s;
+  transition: ease-in-out transform 0.5s;
 }
 .dasboard #dasboard-btn:hover {
   padding-right: 20px;
-}
-.dasboard #dasboard-btn:active {
   background-color: #a1d2f0;
 }
 .dasboard #dasboard-btn:hover img {
-  left: 20px;
+  transform: translateX(20px);
 }
 
 .popup-dasboard {
@@ -188,7 +178,7 @@ img {
   border: none;
   position: absolute;
   border-radius: 30px;
-  transition: transform 0.4s, top 0.4s ease-in-out;
+  transition: ease-in-out transform 0.4s, top 0.4s ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,7 +202,6 @@ img {
 .popup-dasboard .social {
   padding: 20px;
   position: relative;
-
 }
 
 .social ul {
@@ -224,7 +213,6 @@ img {
   padding: 0;
   list-style: none;
   position: relative;
-
 }
 
 .avatar {
@@ -303,6 +291,9 @@ img {
   .avatar {
     left: 20%;
     bottom: 16%;
+  }
+  .dasboard {
+    margin: 0;
   }
 }
 
@@ -411,16 +402,17 @@ img {
   }
 
   .dasboard {
-    padding: 5px 50px;
+    padding: 20px 50px;
+    margin: 0;
   }
   .popup-dasboard {
     width: 22rem;
     height: 32rem;
-    top: 42%;
+    top: 45%;
   }
   .avatar {
     width: 9rem;
-    left: 45%;
+    left: 20%;
     bottom: 1rem;
   }
 
@@ -431,12 +423,5 @@ img {
 
   .popup-dasboard .social {
     padding: 20px 20px 0 20px;
-  }
-}
-
-@media screen and (max-width: 1320px) {
-  .avatar {
-    width: 9rem;
-    margin-left: 10rem;
   }
 }
