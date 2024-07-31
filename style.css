@@ -22,6 +22,7 @@ body {
 h1 {
   text-align: center;
   padding: 15px 0px;
+  font-size: 2rem;
 }
 .user-side {
   padding: 4px 100px;
@@ -148,76 +149,118 @@ img {
 }
 
 .dasboard {
-  padding: 30px;
+  display: grid;
+  justify-items: center;
   margin: auto;
 }
 
 .dasboard #dasboard-btn {
-  color: #000;
-  margin-top: 10px;
-  font-weight: 700;
-  box-shadow: #040405 1px 1px 4px inset;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+  display: grid;
+  transition: ease-in-out 0.3s;
+}
+.dasboard #dasboard-btn img {
+  width: 1rem;
+  padding: auto;
+  background: none;
+  position: relative;
+  transition: transform 0.3s;
 }
 .dasboard #dasboard-btn:hover {
-  transform: translateX(2px);
+  padding-right: 20px;
+}
+.dasboard #dasboard-btn:active {
+  background-color: #a1d2f0;
+}
+.dasboard #dasboard-btn:hover img {
+  left: 20px;
 }
 
 .popup-dasboard {
   background-color: transparent;
   backdrop-filter: blur(50px);
-  height: 70vh;
+  height: 75vh;
   width: 60vh;
+  border: none;
   position: absolute;
-  transform: translate(-50%, -50%) scale(0.1);
-  top: 100%;
-
   border-radius: 30px;
   transition: transform 0.4s, top 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   visibility: hidden;
+  opacity: 0;
+  top: 80%;
+  transform: translate(-50%, -50%) scale(0.1);
+  overflow: hidden;
 }
 
 .open-popup {
   visibility: visible;
   top: 50%;
   left: 50%;
+  opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
 
 .popup-dasboard .social {
-  padding: 30px 50px 0 50px;
+  padding: 20px;
+  position: relative;
+
 }
 
 .social ul {
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 15px 60px;
-}
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  position: relative;
 
-.social ul li {
-  list-style-type: none;
 }
 
 .avatar {
   width: 10rem;
+  margin-top: 20px;
   position: relative;
-  left: 29%;
 }
 
 #music {
   width: 3rem;
+  cursor: pointer;
 }
+
 .sound-set {
-  float: left;
-  margin: 0 0 0 40px;
   display: flex;
   flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .sound-set #slider::-webkit-slider-thumb {
   cursor: pointer;
+}
+
+.wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: screen;
+  overflow: hidden;
+  flex-direction: column;
 }
 
 /* responsive for mobile device */
@@ -322,7 +365,7 @@ img {
   }
 
   .avatar {
-    width: 10rem;
+    width: 8rem;
     left: 50%;
     bottom: 16%;
     transform: translateX(-50%);
@@ -357,13 +400,16 @@ img {
   }
 
   .wrap {
-    height: 95vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    height: screen;
+    overflow: hidden;
+    flex-direction: column;
   }
+
   .dasboard {
     padding: 5px 50px;
   }
@@ -373,19 +419,24 @@ img {
     top: 42%;
   }
   .avatar {
-    width: 10rem;
+    width: 9rem;
     left: 45%;
     bottom: 1rem;
   }
 
   .dasboard #dasboard-btn {
-    color: rgb(232, 230, 227);
-    box-shadow: rgb(3, 4, 4) 1px 1px 4px inset;
-    margin-top: 3rem;
-    padding: 5px;
+    border: none;
+    border-radius: 50px;
   }
 
   .popup-dasboard .social {
     padding: 20px 20px 0 20px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .avatar {
+    width: 9rem;
+    margin-left: 10rem;
   }
 }
